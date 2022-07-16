@@ -22,7 +22,7 @@ export class LeagueClient extends EventEmitter {
   private isListening: boolean = false
   public credentials?: Credentials = undefined
 
-  constructor(credentials: Credentials, public options?: LeagueClientOptions) {
+  constructor(credentials?: Credentials, public options?: LeagueClientOptions) {
     super()
     this.credentials = credentials
   }
@@ -35,12 +35,6 @@ export class LeagueClient extends EventEmitter {
     // running
     if (!this.isListening) {
       this.isListening = true
-
-      if (this.credentials === undefined || !processExists(this.credentials.pid)) {
-        // Invalidated credentials or no LeagueClientUx process, fail
-        throw new ClientNotFoundError()
-      }
-
       this.onTick()
     }
   }
