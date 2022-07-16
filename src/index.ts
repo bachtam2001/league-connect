@@ -15,8 +15,4 @@ export {
   EventResponse,
   EventCallback
 } from './websocket'
-export {
-  DEPRECATED_request,
-  DEPRECATED_RequestOptions,
-  DEPRECATED_Response
-} from './request_deprecated'
+export { DEPRECATED_request, DEPRECATED_RequestOptions, DEPRECATED_Response } from './request_deprecated'
